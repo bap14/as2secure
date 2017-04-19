@@ -1,0 +1,31 @@
+{
+  "name": "bap14/as2secure",
+  "type": "",
+  "description": "AS2 package based on AS2SecureCode (http://www.as2securecode.com)",
+  "keywords": [
+    "as2",
+    "as2secure"
+  ],
+  "homepage": "https://www.github.com/bap14/as2secure",
+  "license": "GNU LGPL",
+  "authors": [
+    {
+      "name": "Brett P.",
+      "email": "bap14@users.noreply.github.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "x59/horde-mime": ">=2.9.5",
+    "x59/horde-util": ">=2.5.7"
+  },
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-0": { "Bap14\\As2secure\\": "" }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "development"
+    }
+  }
+}
