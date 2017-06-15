@@ -4,19 +4,18 @@
   "description": "Implementation of AS2Secure for PHP 7.x and composer-based projects.  Based on code from as2secure.com.",
   "version": "0.0.1",
   "license": "MIT",
-  "repository": "https://github.com/bap14/as2secure",
   "keywords": [
     "as2",
     "as2secure",
     "as2securecode"
   ],
   "require": {
-    "php": ">=7.0",
-    "x59/horde-mime": ">=2.9.5",
-    "x59/horde-util": ">=2.5.7"
+    "php": "~5.6.0|~7.0.0",
+    "x59/horde-mime": "~2.9.5",
+    "x59/horde-util": "~2.5.7"
   },
   "autoload": {
     "psr-4": { "Bap14\\AS2Secure\\": "src/" }
   },
-  "bin": { "bin/AS2Secure.jar" }
+  "bin": [ "bin/AS2Secure.jar" ]
 }

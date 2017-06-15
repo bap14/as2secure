@@ -1,0 +1,575 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "123e67ec7435c8f64a5635f53547af25",
+    "packages": [
+        {
+            "name": "x59/horde-exception",
+            "version": "2.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x59/horde-exception.git",
+                "reference": "e380ebd90905320341237d5138444d699c384b4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/x59/horde-exception/zipball/e380ebd90905320341237d5138444d699c384b4d",
+                "reference": "e380ebd90905320341237d5138444d699c384b4d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0,<=8.0.0alpha1",
+                "x59/horde-translation": ">=2.2.0,<=3.0.0alpha1"
+            },
+            "suggest": {
+                "x59/horde-test": ">=2.1.0@stable,<=3.0.0alpha1@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": "lib/"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Chuck Hagenbuch",
+                    "email": "chuck@horde.org",
+                    "role": "Lead"
+                },
+                {
+                    "name": "Jan Schneider",
+                    "email": "jan@horde.org",
+                    "role": "Lead"
+                },
+                {
+                    "name": "Michael Slusarz",
+                    "email": "slusarz@horde.org",
+                    "role": "developer"
+                }
+            ],
+            "description": "Horde Exception Handler",
+            "homepage": "https://pear.horde.org",
+            "time": "2016-03-21T00:00:00+00:00"
+        },
+        {
+            "name": "x59/horde-idna",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x59/horde-idna.git",
+                "reference": "9ffa40c78637d00270973c4584c85f983ee3ce51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/x59/horde-idna/zipball/9ffa40c78637d00270973c4584c85f983ee3ce51",
+                "reference": "9ffa40c78637d00270973c4584c85f983ee3ce51",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0,<=8.0.0alpha1",
+                "x59/horde-exception": ">=2.0.0,<=3.0.0alpha1",
+                "x59/horde-util": ">=2.0.0,<=3.0.0alpha1"
+            },
+            "suggest": {
+                "ext-intl": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": "lib/"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Slusarz",
+                    "email": "slusarz@horde.org",
+                    "role": "lead"
+                }
+            ],
+            "description": "IDNA backend normalization package",
+            "homepage": "https://pear.horde.org",
+            "time": "2016-02-01T00:00:00+00:00"
+        },
+        {
+            "name": "x59/horde-listheaders",
+            "version": "1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x59/horde-listheaders.git",
+                "reference": "c761e9433904088b4b938741c073400b717bae75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/x59/horde-listheaders/zipball/c761e9433904088b4b938741c073400b717bae75",
+                "reference": "c761e9433904088b4b938741c073400b717bae75",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0,<=8.0.0alpha1",
+                "x59/horde-mail": ">=2.0.0,<=3.0.0alpha1",
+                "x59/horde-translation": ">=2.2.0,<=3.0.0alpha1",
+                "x59/horde-util": ">=2.0.0,<=3.0.0alpha1"
+            },
+            "suggest": {
+                "x59/horde-mime": ">=2.5.0@stable,<=3.0.0alpha1@stable",
+                "x59/horde-test": ">=2.1.0@stable,<=3.0.0alpha1@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": "lib/"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Slusarz",
+                    "email": "slusarz@horde.org",
+                    "role": "lead"
+                }
+            ],
+            "description": "Horde List Headers Parsing Library",
+            "homepage": "https://pear.horde.org",
+            "time": "2016-04-05T00:00:00+00:00"
+        },
+        {
+            "name": "x59/horde-mail",
+            "version": "2.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x59/horde-mail.git",
+                "reference": "c856bb54249c8acc50eb9fa2d804ee130c0fe3a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/x59/horde-mail/zipball/c856bb54249c8acc50eb9fa2d804ee130c0fe3a2",
+                "reference": "c856bb54249c8acc50eb9fa2d804ee130c0fe3a2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0,<=8.0.0alpha1",
+                "x59/horde-exception": ">=2.0.0,<=3.0.0alpha1",
+                "x59/horde-idna": ">=1.0.0,<=2.0.0alpha1",
+                "x59/horde-mime": ">=2.0.0,<=3.0.0alpha1",
+                "x59/horde-stream-filter": ">=2.0.0,<=3.0.0alpha1",
+                "x59/horde-translation": ">=2.2.0,<=3.0.0alpha1",
+                "x59/horde-util": ">=2.0.0,<=3.0.0alpha1"
+            },
+            "suggest": {
+                "pear-pear.horde.org/Horde_Smtp": ">=1.7.0@stable,<=2.0.0alpha1@stable",
+                "pear-pear.horde.org/Horde_Stream_Wrapper": ">=2.1.0@stable,<=3.0.0alpha1@stable",
+                "pear-pear.php.net/Net_DNS2": "*",
+                "pear-pear.php.net/Net_SMTP": ">=1.6.0@stable",
+                "x59/horde-test": ">=2.1.0@stable,<=3.0.0alpha1@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": "lib/"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Slusarz",
+                    "email": "slusarz@horde.org",
+                    "role": "lead"
+                }
+            ],
+            "description": "Horde Mail Library",
+            "homepage": "https://pear.horde.org",
+            "time": "2016-02-01T00:00:00+00:00"
+        },
+        {
+            "name": "x59/horde-mime",
+            "version": "2.9.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x59/horde-mime.git",
+                "reference": "0f320041427d9a2564a5405091f82d268d198375"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/x59/horde-mime/zipball/0f320041427d9a2564a5405091f82d268d198375",
+                "reference": "0f320041427d9a2564a5405091f82d268d198375",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0,<=8.0.0alpha1",
+                "x59/horde-exception": ">=2.0.0,<=3.0.0alpha1",
+                "x59/horde-listheaders": ">=1.2.0,<=2.0.0alpha1",
+                "x59/horde-mail": ">=2.5.0,<=3.0.0alpha1",
+                "x59/horde-stream": ">=1.3.0,<=2.0.0alpha1",
+                "x59/horde-stream-filter": ">=2.0.0,<=3.0.0alpha1",
+                "x59/horde-support": ">=2.1.0,<=3.0.0alpha1",
+                "x59/horde-text-flowed": ">=2.0.0,<=3.0.0alpha1",
+                "x59/horde-translation": ">=2.2.0,<=3.0.0alpha1",
+                "x59/horde-util": ">=2.0.0,<=3.0.0alpha1"
+            },
+            "suggest": {
+                "pear-pear.horde.org/Horde_Nls": ">=2.0.0@stable,<=3.0.0alpha1@stable",
+                "pear-pear.horde.org/Horde_Text_Filter": ">=2.0.0@stable,<=3.0.0alpha1@stable",
+                "pear-pear.php.net/Net_DNS2": "*",
+                "pear-pecl.php.net/idn": "*",
+                "pear-pecl.php.net/intl": "*",
+                "x59/horde-test": ">=2.1.0@stable,<=3.0.0alpha1@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": "lib/"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Chuck Hagenbuch",
+                    "email": "chuck@horde.org",
+                    "role": "Lead"
+                },
+                {
+                    "name": "Michael Slusarz",
+                    "email": "slusarz@horde.org",
+                    "role": "lead"
+                }
+            ],
+            "description": "Horde MIME Library",
+            "homepage": "https://pear.horde.org",
+            "time": "2016-05-31T00:00:00+00:00"
+        },
+        {
+            "name": "x59/horde-stream",
+            "version": "1.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x59/horde-stream.git",
+                "reference": "5b567c61af0955f885f6d772ec93afa79946ba2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/x59/horde-stream/zipball/5b567c61af0955f885f6d772ec93afa79946ba2a",
+                "reference": "5b567c61af0955f885f6d772ec93afa79946ba2a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0,<=8.0.0alpha1",
+                "x59/horde-exception": ">=2.0.0,<=3.0.0alpha1"
+            },
+            "suggest": {
+                "pear-pear.horde.org/Horde_Stream_Wrapper": ">=2.1.0@stable,<=3.0.0alpha1@stable",
+                "x59/horde-test": ">=2.1.0@stable,<=3.0.0alpha1@stable",
+                "x59/horde-util": ">=2.0.0@stable,<=3.0.0alpha1@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": "lib/"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Slusarz",
+                    "email": "slusarz@horde.org",
+                    "role": "lead"
+                }
+            ],
+            "description": "Horde stream handler",
+            "homepage": "https://pear.horde.org",
+            "time": "2016-02-02T00:00:00+00:00"
+        },
+        {
+            "name": "x59/horde-stream-filter",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x59/horde-stream-filter.git",
+                "reference": "0642189a0acf52cca75246edfabf7c0dd6b46099"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/x59/horde-stream-filter/zipball/0642189a0acf52cca75246edfabf7c0dd6b46099",
+                "reference": "0642189a0acf52cca75246edfabf7c0dd6b46099",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0,<=8.0.0alpha1"
+            },
+            "suggest": {
+                "x59/horde-test": ">=2.1.0@stable,<=3.0.0alpha1@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": "lib/"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Chuck Hagenbuch",
+                    "email": "chuck@horde.org",
+                    "role": "Lead"
+                },
+                {
+                    "name": "Michael Slusarz",
+                    "email": "slusarz@horde.org",
+                    "role": "lead"
+                }
+            ],
+            "description": "Horde Stream filters",
+            "homepage": "https://pear.horde.org",
+            "time": "2016-02-02T00:00:00+00:00"
+        },
+        {
+            "name": "x59/horde-stream-wrapper",
+            "version": "2.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x59/horde-stream-wrapper.git",
+                "reference": "8d933c0ad5a17e71122ef54e888c33e7c63d441f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/x59/horde-stream-wrapper/zipball/8d933c0ad5a17e71122ef54e888c33e7c63d441f",
+                "reference": "8d933c0ad5a17e71122ef54e888c33e7c63d441f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0,<=8.0.0alpha1"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Chuck Hagenbuch",
+                    "email": "chuck@horde.org",
+                    "role": "Lead"
+                },
+                {
+                    "name": "Michael Slusarz",
+                    "email": "slusarz@horde.org",
+                    "role": "lead"
+                }
+            ],
+            "description": "Horde Stream wrappers",
+            "homepage": "https://pear.horde.org",
+            "time": "2016-02-02T00:00:00+00:00"
+        },
+        {
+            "name": "x59/horde-support",
+            "version": "2.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x59/horde-support.git",
+                "reference": "948f1a4e993905ce037368546820dc3a64bb38ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/x59/horde-support/zipball/948f1a4e993905ce037368546820dc3a64bb38ab",
+                "reference": "948f1a4e993905ce037368546820dc3a64bb38ab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0,<=8.0.0alpha1",
+                "x59/horde-exception": ">=2.0.0,<=3.0.0alpha1",
+                "x59/horde-stream-wrapper": ">=2.0.0,<=3.0.0alpha1",
+                "x59/horde-util": ">=2.0.0,<=3.0.0alpha1"
+            },
+            "suggest": {
+                "x59/horde-test": ">=2.1.0@stable,<=3.0.0alpha1@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": "lib/"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Chuck Hagenbuch",
+                    "email": "chuck@horde.org",
+                    "role": "Lead"
+                },
+                {
+                    "name": "Jan Schneider",
+                    "email": "jan@horde.org",
+                    "role": "Lead"
+                },
+                {
+                    "name": "Michael Slusarz",
+                    "email": "slusarz@horde.org",
+                    "role": "developer"
+                }
+            ],
+            "description": "Horde support package",
+            "homepage": "https://pear.horde.org",
+            "time": "2016-02-02T00:00:00+00:00"
+        },
+        {
+            "name": "x59/horde-text-flowed",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x59/horde-text-flowed.git",
+                "reference": "73367debcdd8a3ed36390f875cc6b6aa65d5c69d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/x59/horde-text-flowed/zipball/73367debcdd8a3ed36390f875cc6b6aa65d5c69d",
+                "reference": "73367debcdd8a3ed36390f875cc6b6aa65d5c69d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0,<=8.0.0alpha1",
+                "x59/horde-util": ">=2.0.0,<=3.0.0alpha1"
+            },
+            "suggest": {
+                "x59/horde-test": ">=2.1.0@stable,<=3.0.0alpha1@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": "lib/"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Slusarz",
+                    "email": "slusarz@horde.org",
+                    "role": "lead"
+                }
+            ],
+            "description": "Horde API for flowed text as per RFC 3676",
+            "homepage": "https://pear.horde.org",
+            "time": "2016-02-02T00:00:00+00:00"
+        },
+        {
+            "name": "x59/horde-translation",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x59/horde-translation.git",
+                "reference": "4c1ca790d72e44e4c93e03915f8b4b92fa461351"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/x59/horde-translation/zipball/4c1ca790d72e44e4c93e03915f8b4b92fa461351",
+                "reference": "4c1ca790d72e44e4c93e03915f8b4b92fa461351",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0,<=8.0.0alpha1"
+            },
+            "suggest": {
+                "ext-gettext": "*",
+                "x59/horde-test": ">=2.1.0@stable,<=3.0.0alpha1@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": "lib/"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Schneider",
+                    "email": "jan@horde.org",
+                    "role": "Lead"
+                }
+            ],
+            "description": "Horde translation library",
+            "homepage": "https://pear.horde.org",
+            "time": "2016-02-02T00:00:00+00:00"
+        },
+        {
+            "name": "x59/horde-util",
+            "version": "2.5.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/x59/horde-util.git",
+                "reference": "808c77b640abe377ed7c5a4075d47fa0f0fad21c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/x59/horde-util/zipball/808c77b640abe377ed7c5a4075d47fa0f0fad21c",
+                "reference": "808c77b640abe377ed7c5a4075d47fa0f0fad21c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "php": ">=5.3.0,<=8.0.0alpha1"
+            },
+            "suggest": {
+                "ext-ctype": "*",
+                "ext-filter": "*",
+                "ext-iconv": "*",
+                "ext-intl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-xml": "*",
+                "pear-pear.horde.org/Horde_Imap_Client": ">=2.0.0@stable,<=3.0.0alpha1@stable",
+                "x59/horde-test": ">=2.1.0@stable,<=3.0.0alpha1@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": "lib/"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Chuck Hagenbuch",
+                    "email": "chuck@horde.org",
+                    "role": "Lead"
+                },
+                {
+                    "name": "Jan Schneider",
+                    "email": "jan@horde.org",
+                    "role": "Lead"
+                },
+                {
+                    "name": "Michael Slusarz",
+                    "email": "slusarz@horde.org",
+                    "role": "developer"
+                }
+            ],
+            "description": "Horde Utility Libraries",
+            "homepage": "https://pear.horde.org",
+            "time": "2016-02-02T00:00:00+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "~5.6.0|~7.0.0"
+    },
+    "platform-dev": []
+}
