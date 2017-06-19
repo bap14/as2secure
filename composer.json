@@ -3,14 +3,14 @@
   "type": "library",
   "description": "Implementation of AS2Secure for PHP 7.x and composer-based projects.  Based on code from as2secure.com.",
   "version": "0.0.1",
-  "license": "MIT",
+  "license": "LGPL-3.0",
   "keywords": [
     "as2",
     "as2secure",
     "as2securecode"
   ],
   "require": {
-    "php": "~5.6.0|~7.0.0",
+    "php": "~5.6.5|~7.0.17",
     "x59/horde-mime": "~2.9.5",
     "x59/horde-util": "~2.5.7"
   },
