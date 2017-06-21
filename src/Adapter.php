@@ -137,7 +137,7 @@ class Adapter
      * @throws Pkcs12BundleException
      */
     public function decrypt($input) {
-        $privateKey = $this->receivingPartner->getPrivateKey();
+        $privateKey = $this->receivingPartner->getPrivateKeyFile();
         if (!$privateKey) {
             throw new Pkcs12BundleException('Unable to extract private key from PKCS12 bundle');
         }
@@ -337,9 +337,7 @@ class Adapter
 
         $compress = ($useZlib ? ' -compress' : '');
 
-        $pkcs12Bundle = $this->getTempFilename();
-        $this->addTempFileForDelete($pkcs12Bundle);
-        file_put_contents($pkcs12Bundle, $this->sendingPartner->getSecPkcs12());
+        $pkcs12Bundle = $this->sendingPartner->getSecPkcs12File();
 
         $destinationFile = $this->getTempFilename();
 
@@ -358,6 +356,12 @@ class Adapter
         return $destinationFile;
     }
 
+    /**
+     * Verify message received
+     *
+     * @param $input
+     * @return bool|string
+     */
     public function verify($input) {
         if ($this->sendingPartner->getSecPkcs12()) {
             $security = ' -pkcs12 ' . escapeshellarg($this->sendingPartner->getSecPkcs12());
@@ -365,7 +369,7 @@ class Adapter
                 $security .= ' -password ' . escapeshellarg($this->sendingPartner->getSecPkcs12Password());
             }
         } else {
-            $security = ' -cert ' . escapeshellarg($this->sendingPartner->getSecCertificate());
+            $security = ' -cert ' . escapeshellarg($this->sendingPartner->getSecCertificateFile());
         }
 
         $destinationFile = $this->getTempFilename();

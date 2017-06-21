@@ -301,6 +301,15 @@ class Partner
     }
 
     /**
+     * Get the private key file path
+     *
+     * @return string
+     */
+    public function getPrivateKeyFile() {
+        return $this->_writeFile($this->getId() . '.key', $this->getPrivateKey());
+    }
+
+    /**
      * Get public key from PKCS12 bundle
      *
      * @return bool|string
@@ -310,12 +319,30 @@ class Partner
     }
 
     /**
+     * Get the public key file path
+     *
+     * @return string
+     */
+    public function getPublicKeyFile() {
+        return $this->_writeFile($this->getId() . '.pub', $this->getPublicKey());
+    }
+
+    /**
      * Get security certificate (Base64 encoded)
      *
      * @return string
      */
     public function getSecCertificate() {
         return $this->secCertificate;
+    }
+
+    /**
+     * Get the certificate file path
+     *
+     * @return string
+     */
+    public function getSecCertificateFile() {
+        return $this->_writeFile($this->getId() . '.cer', $this->getSecCertificate());
     }
 
     /**
@@ -334,6 +361,15 @@ class Partner
      */
     public function getSecPkcs12() {
         return $this->secPkcs12;
+    }
+
+    /**
+     * Get the PKCS12 bundle file path
+     *
+     * @return string
+     */
+    public function getSecPkcs12File() {
+        return $this->_writeFile($this->getId() . '.p12', $this->getSecPkcs12());
     }
 
     /**
@@ -706,5 +742,34 @@ class Partner
         $this->adapter->addTempFileForDelete($destinationFile);
 
         return $destinationFile;
+    }
+
+    /**
+     * Write a file to the _private directory and return full path to file.  If file exists and the contents are the
+     * the same, just return the file path.
+     *
+     * @param $filename
+     * @param $contents
+     * @return bool|string
+     */
+    protected function _writeFile($filename, $contents) {
+        $filePath = realpath(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . '_private');
+        $filePath .= DIRECTORY_SEPARATOR . $filename;
+
+        $writeNewFile = true;
+        if (file_exists($filePath)) {
+            $pkeyContents = file_get_contents($filePath);
+            if ($pkeyContents == $contents) {
+                $writeNewFile = false;
+            }
+        }
+
+        if ($writeNewFile) {
+            $fp = fopen($filePath, 'w+b');
+            file_put_contents($fp, $contents);
+            @fclose($fp);
+        }
+
+        return $filePath;
     }
 }
