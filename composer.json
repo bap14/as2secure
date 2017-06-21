@@ -17,5 +17,8 @@
   "autoload": {
     "psr-4": { "Bap14\\AS2Secure\\": "src/" }
   },
-  "bin": [ "bin/AS2Secure.jar" ]
+  "bin": [ "bin/AS2Secure.jar" ],
+  "scripts": {
+    "post-package-install": [ "Bap14\\AS2Secure\\Scripts\\PostPackageInstall::createMessageDirs" ]
+  }
 }

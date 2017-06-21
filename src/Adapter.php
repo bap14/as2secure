@@ -359,6 +359,27 @@ class Adapter
     }
 
     public function verify($input) {
+        if ($this->sendingPartner->getSecPkcs12()) {
+            $security = ' -pkcs12 ' . escapeshellarg($this->sendingPartner->getSecPkcs12());
+            if ($this->sendingPartner->getSecPkcs12Password()) {
+                $security .= ' -password ' . escapeshellarg($this->sendingPartner->getSecPkcs12Password());
+            }
+        } else {
+            $security = ' -cert ' . escapeshellarg($this->sendingPartner->getSecCertificate());
+        }
+
+        $destinationFile = $this->getTempFilename();
+
+        $command = $this->getJavaPath() . ' -jar ' . escapeshellarg($this->getJarPath()) .
+            ' verify ' .
+            $security .
+            ' -in ' . escapeshellarg($input) .
+            ' -out ' . escapeshellarg($destinationFile) .
+            ' > /dev/null 2>&1';
+
+        $this->exec($command);
+
+        return $destinationFile;
     }
 
     protected function getJarPath() {
