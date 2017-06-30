@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "123e67ec7435c8f64a5635f53547af25",
+    "content-hash": "52bacbf239fea5893a757803c0ac5e09",
     "packages": [
+        {
+            "name": "pear-pear.php.net/Mail_Mime",
+            "version": "1.10.1",
+            "dist": {
+                "type": "file",
+                "url": "https://pear.php.net/get/Mail_Mime-1.10.1.tgz",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "php": ">=5.0.0.0"
+            },
+            "replace": {
+                "pear-pear/mail_mime": "== 1.10.1.0"
+            },
+            "type": "pear-library",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            },
+            "include-path": [
+                "/"
+            ],
+            "license": [
+                "BSD Style"
+            ],
+            "description": "Mail_Mime provides classes to deal with the creation and manipulation of MIME messages.\nIt allows people to create e-mail messages consisting of:\n* Text Parts\n* HTML Parts\n* Inline HTML Images\n* Attachments\n* Attached messages\n\nIt supports big messages, base64 and quoted-printable encodings and\nnon-ASCII characters in filenames, subjects, recipients, etc. encoded\nusing RFC2047 and/or RFC2231."
+        },
+        {
+            "name": "pear-pear.php.net/Mail_mimeDecode",
+            "version": "1.5.6",
+            "dist": {
+                "type": "file",
+                "url": "https://pear.php.net/get/Mail_mimeDecode-1.5.6.tgz",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "pear-pear.php.net/mail_mime": ">1.4.0.0",
+                "php": ">=4.3.0.0"
+            },
+            "replace": {
+                "pear-pear/mail_mimedecode": "== 1.5.6.0"
+            },
+            "type": "pear-library",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            },
+            "include-path": [
+                "/"
+            ],
+            "license": [
+                "BSD Style"
+            ],
+            "description": "Provides a class to deal with the decoding and interpreting of mime messages.\n This package used to be part of the Mail_Mime package, but has been split off."
+        },
         {
             "name": "x59/horde-exception",
             "version": "2.0.8",
@@ -569,7 +628,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "~5.6.0|~7.0.0"
+        "php": "~5.6.5|~7.0.17"
     },
     "platform-dev": []
 }

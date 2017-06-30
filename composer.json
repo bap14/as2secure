@@ -9,16 +9,26 @@
     "as2secure",
     "as2securecode"
   ],
+  "repositories": [
+    {
+      "type": "pear",
+      "url": "https://pear.php.net"
+    }
+  ],
   "require": {
     "php": "~5.6.5|~7.0.17",
     "x59/horde-mime": "~2.9.5",
-    "x59/horde-util": "~2.5.7"
+    "x59/horde-util": "~2.5.7",
+    "pear-pear.php.net/Mail_mimeDecode": "~1.5.6"
   },
   "autoload": {
     "psr-4": { "Bap14\\AS2Secure\\": "src/" }
   },
   "bin": [ "bin/AS2Secure.jar" ],
   "scripts": {
-    "post-package-install": [ "Bap14\\AS2Secure\\Scripts\\PostPackageInstall::createMessageDirs" ]
+    "post-package-install": [
+      "Bap14\\AS2Secure\\Scripts\\PostPackageInstall::createMessageDirs",
+      "Bap14\\AS2Secure\\Scripts\\PostPackageInstall::createLogsDir"
+    ]
   }
 }

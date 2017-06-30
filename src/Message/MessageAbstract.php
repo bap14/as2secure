@@ -10,6 +10,7 @@ namespace Bap14\AS2Secure\Message;
 use Bap14\AS2Secure\Exception\InvalidPartnerException;
 use Bap14\AS2Secure\Adapter;
 use Bap14\AS2Secure\Authentication;
+use Bap14\AS2Secure\Logger;
 use Bap14\AS2Secure\Partner;
 
 /**
@@ -46,8 +47,14 @@ abstract class MessageAbstract
     /** @var  boolean */
     protected $isSigned;
 
+    /** @var  Logger */
+    protected $logger;
+
     /** @var  string */
     protected $messageId;
+
+    /** @var  string */
+    protected $mimetype;
 
     /** @var  array */
     protected $path = [];
@@ -81,11 +88,41 @@ abstract class MessageAbstract
 
     /**
      * MessageAbstract constructor.
+     *
+     * @param $data
+     * @param array $params
      */
-    public function __construct() {
+    public function __construct($data=null, $params=[]) {
         $this->adapter          = new Adapter();
         $this->authentication   = new Authentication();
         $this->headerCollection = new HeaderCollection();
+        $this->logger           = Logger::getInstance();
+
+        if (is_array($data)) {
+            $this->setPath($data);
+        }
+        else if ($data) {
+            if (array_key_exists('is_file', $params) && $params['is_file'] === false) {
+                $file = $this->adapter->getTempFilename();
+                file_put_contents($file, $data);
+                $this->setPath($file);
+
+                if (array_key_exists('filename', $params)) {
+                    $this->setFilename($params['filename']);
+                }
+            }
+            else {
+                $this->setPath($data);
+                $this->setFilename(
+                    array_key_exists('filename', $params) ? $params['filename'] : basename($this->getPath())
+                );
+            }
+
+            $this->setMimetype(
+                array_key_exists('mimetype', $params) ?
+                        $params['mimetype'] : $this->adapter->detectMimeType($this->getFilename())
+            );
+        }
     }
 
     /**
@@ -169,6 +206,15 @@ abstract class MessageAbstract
     }
 
     /**
+     * Get mimetype of message
+     *
+     * @return string
+     */
+    public function getMimetype() {
+        return $this->mimetype;
+    }
+
+    /**
      * Get path of message.
      *
      * @return array
@@ -226,13 +272,25 @@ abstract class MessageAbstract
     }
 
     /**
+     * Set mimetype of message
+     *
+     * @param $mimetype
+     * @return $this
+     */
+    public function setMimetype($mimetype) {
+        $this->mimetype = $mimetype;
+        return $this;
+    }
+
+    /**
      * Set path of message.
      *
      * @param array $path
-     * @return array
+     * @return $this
      */
     public function setPath(array $path) {
-        return $this->path = $path;
+        $this->path = $path;
+        return $this;
     }
 
     /**

@@ -61,6 +61,21 @@ class Adapter
     }
 
     /**
+     * Calculate the MIC checksum of a file
+     *
+     * @param $input Path to file to calculate checksum for
+     * @param string $algorithm ALgorithm to use: sha1 or md5
+     * @return string
+     */
+    public function calculateMicChecksum($input, $algorithm='sha1') {
+        if (strtolower($algorithm) == 'sha1') {
+            return base64_encode($this->hex2bin(sha1_file($input))) . ', sha1';
+        } else {
+            return base64_encode($this->hex2bin(md5_file($input))) . ', md5';
+        }
+    }
+
+    /**
      * Compose a MIME message
      *
      * @param $files
@@ -165,6 +180,19 @@ class Adapter
     }
 
     /**
+     * Detect mime type of file
+     *
+     * @param string $file Path to file
+     * @return string
+     */
+    public function detectMimeType($file) {
+        $fileInfo = finfo_open(FILEINFO_MIME);
+        $mimeType = finfo_file($fileInfo, $file);
+        finfo_close($fileInfo);
+        return $mimeType;
+    }
+
+    /**
      * Execute a shell command
      *
      * @param $command
@@ -252,6 +280,27 @@ class Adapter
     }
 
     /**
+     * Get MIC checksum of file.
+     *
+     * @param $input Path of file to get checksum for
+     * @return bool|mixed
+     */
+    public function getMicChecksum($input) {
+        try {
+            $command = $this->getJavaPath() . ' -jar ' . escapeshellarg($this->getJarPath()) .
+                ' checksum' .
+                ' -in ' . escapeshellarg($input) .
+                ' 2>/dev/null';
+
+            $result = $this->exec($command, true);
+            return $result[0];
+        }
+        catch (\Exception $e) {
+            return false;
+        }
+    }
+
+    /**
      * Generate a temporary file name
      *
      * @return bool|string
@@ -266,6 +315,23 @@ class Adapter
         self::$tmpFiles[] = $filename;
 
         return $filename;
+    }
+
+    /**
+     * Convert string from hexadecimal to binary
+     *
+     * @param string $string
+     * @return string
+     */
+    public function hex2bin($string) {
+        $bin = '';
+        $characters = str_split($string);
+        for ($i=0; $i < count($characters); ) {
+            $bin .= chr(hexdec($characters[$i] . $characters[$i + 1]));
+            $i += 2;
+        }
+
+        return $bin;
     }
 
     /**

@@ -11,6 +11,13 @@ use Composer\Installer\PackageEvent;
 
 class PostPackageInstall
 {
+    public static function createLogsDir(PackageEvent $event) {
+        $package = $event->getOperation()->getPackage();
+        if ($package->getName() == 'bap14/as2secure') {
+            mkdir(realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR . '_logs', 0777);
+        }
+    }
+
     public static function createMessageDirs(PackageEvent $event) {
         $package = $event->getOperation()->getPackage();
         if ($package->getName() == 'bap14/as2secure') {
