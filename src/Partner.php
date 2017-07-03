@@ -46,7 +46,7 @@ class Partner
     const SIGN_NONE   = 'none';
     const SIGN_MD5    = 'md5';
     const SIGN_SHA1   = 'sha1';
-    // TODO: Verify implemntation of sha256 and up
+    // TODO: Verify implemntation of sha256 and up in JAR file
     const SIGN_SHA256 = 'sha256';
     const SIGN_SHA384 = 'sha384';
     const SIGN_SHA512 = 'sha512';
@@ -231,10 +231,11 @@ class Partner
     /**
      * Get partner ID
      *
+     * @param boolean $encloseWithQuotes Whether to enclose ID with double-quotes or not
      * @return string
      */
-    public function getId() {
-        return $this->id;
+    public function getId($encloseWithQuotes=false) {
+        return sprintf('%1$s%s%1$s', ($encloseWithQuotes ? '"' : null), $this->id);
     }
 
     /**

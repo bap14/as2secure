@@ -57,7 +57,7 @@ class Client
             CURLOPT_FORBID_REUSE   => true,
             CURLOPT_POST           => true,
             CURLOPT_POSTFIELDS     => $request->getContents(),
-            CURLOPT_USERAGENT      => 'AS2Secure - PHP Library for AS2 Message Handling / PHP/' . phpversion(),
+            CURLOPT_USERAGENT      => Adapter::getServerSignature(),
             CURLOPT_HEADERFUNCTION => array($this->response, 'curlHeaderHandler')
         ]);
 

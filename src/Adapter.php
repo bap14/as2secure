@@ -246,7 +246,7 @@ class Adapter
                 continue;
             }
             else if (count($tmp) != 3) {
-                throw new InvalidDataStructureException('Uneexpected data structure while extracting message');
+                throw new InvalidDataStructureException('Unexpected data structure while extracting message');
             }
 
             $file = [
@@ -298,6 +298,15 @@ class Adapter
         catch (\Exception $e) {
             return false;
         }
+    }
+
+    /**
+     * Get server signature / User-Agent string
+     *
+     * @return string
+     */
+    public static function getServerSignature() {
+        return 'AS2Secure - PHP Library for AS2 Message Handling / PHP/' . phpversion();
     }
 
     /**

@@ -38,6 +38,15 @@ class HeaderCollection implements \Countable, \ArrayAccess, \Iterator
         return $this;
     }
 
+    public function addHeadersFromMessage($message) {
+        $headers = $this->parseContent($message);
+        if ($headers->count()) {
+            foreach ($headers as $key => $value) {
+                $this->addHeader($key, $value);
+            }
+        }
+    }
+
     public function count() {
         return count($this->headers);
     }

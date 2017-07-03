@@ -112,6 +112,9 @@ class Response
         return $this;
     }
 
+    /**
+     * Send MDN
+     */
     public function sendMDN() {
         $responseHeaders = $this->response->getLastResponse()['headers'];
         $this->as2response = new Request($this, $responseHeaders);
