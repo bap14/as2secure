@@ -1,5 +1,7 @@
 ---
+layout: single
 title: Examples
+permalink: /examples/
 ---
 
 # Examples
