@@ -296,7 +296,7 @@ abstract class MessageAbstract
     /**
      * Set the receiving partner identity
      *
-     * @param Partner|array $partner
+     * @param Partner|string $partner A Partner object or a string with the partner ID
      *
      * @return $this
      */
@@ -314,7 +314,7 @@ abstract class MessageAbstract
     /**
      * Set the sending partner identity
      *
-     * @param Partner|array $partner
+     * @param Partner|string $partner A Partner object or a string with the partner ID
      *
      * @return $this
      */

@@ -280,6 +280,20 @@ class Adapter
     }
 
     /**
+     * Get message temp directory
+     *
+     * @param null $path
+     * @return string
+     */
+    public function getMessagesDir($path=null) {
+        $returnValue = realpath(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR;
+        if ($path !== null) {
+            $returnValue .= $path . DIRECTORY_SEPARATOR;
+        }
+        return $returnValue;
+    }
+
+    /**
      * Get MIC checksum of file.
      *
      * @param $input Path of file to get checksum for
@@ -306,7 +320,11 @@ class Adapter
      * @return string
      */
     public static function getServerSignature() {
-        return 'AS2Secure - PHP Library for AS2 Message Handling / PHP/' . phpversion();
+        return self::getSoftwareName() . ' / PHP/' . phpversion();
+    }
+
+    public static function getSoftwareName() {
+        return 'AS2Secure - PHP Library for AS2 Message Handling';
     }
 
     /**

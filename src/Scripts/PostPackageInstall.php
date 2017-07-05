@@ -21,8 +21,8 @@ class PostPackageInstall
     public static function createMessageDirs(PackageEvent $event) {
         $package = $event->getOperation()->getPackage();
         if ($package->getName() == 'bap14/as2secure') {
-            mkdir(realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR . '_private', 0777);
-            mkdir(realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR . '_messages', 0777);
+            mkdir(realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR . '_private', 0777, true);
+            mkdir(realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR . '_messages', 0777, true);
         }
     }
 }

@@ -16,7 +16,7 @@
     }
   ],
   "require": {
-    "php": "~5.6.5|~7.0.17",
+    "php": "~5.6.0|~7.0.17",
     "x59/horde-mime": "~2.9.5",
     "x59/horde-util": "~2.5.7",
     "pear-pear.php.net/Mail_mimeDecode": "~1.5.6"
