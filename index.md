@@ -1,6 +1,6 @@
 ---
 title: AS2Secure - AS2 Library in PHP
-layout: page
+layout: post
 ---
 
 # AS2Secure - AS2 Library in PHP
