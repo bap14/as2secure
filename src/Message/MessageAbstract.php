@@ -129,10 +129,20 @@ abstract class MessageAbstract
      * Add file to message
      *
      * @param string $file
-     * @return array
+     * @return $this
      */
     public function addFile($file) {
         return $this->files[] = realpath($file);
+        return $this;
+    }
+
+    /**
+     * Get the adapter used for messages
+     *
+     * @return Adapter
+     */
+    public function getAdapter() {
+        return $this->adapter;
     }
 
     /**

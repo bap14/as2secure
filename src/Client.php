@@ -34,7 +34,7 @@ class Client
         return $this->response;
     }
 
-    public function sendRequest($request) {
+    public function sendRequest(MessageAbstract $request) {
         if (!($request instanceof MessageAbstract)) {
             throw new InvalidMessageException('Unexpected message type received.  Expected Message or MDN.');
         }
