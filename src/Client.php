@@ -48,6 +48,7 @@ class Client
             CURLOPT_URL            => $request->getUrl(),
             CURLOPT_HEADER         => false,
             CURLOPT_HTTPHEADER     => $headers,
+            CURLOPT_INTERFACE      => AS2_IP,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_BINARYTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
